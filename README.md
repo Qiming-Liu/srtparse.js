@@ -1,15 +1,15 @@
-# srtparser.js
+# srtparse.js
 A javascript .srt file parser and player
 
 ## Install
 `npm`
 ```shell
-npm install srtparser.js
+npm install srtparsejs
 ```
 
 ## Example
 ```js
-import srtparser from 'srtparser.js'
+import srtparser from 'srtparsejs'
 
 let srt = `
 1
