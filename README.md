@@ -1,4 +1,4 @@
-# srtparse.js
+# srt-parse.js
 A javascript .srt file parser and player
 
 ## Install
@@ -41,8 +41,5 @@ let srtPlayer = srtparser.setPlayer(parsed, text=>{
 })
 // This will display the text of each subtitle by time
 
-srtPlayer.moveTo("00:00:11,544") // Move to this time
-srtPlayer.pause() // TODO: pause
-srtPlayer.play() // TODO: play
-
+srtPlayer.update("00:00:11,544") // Move to this time
 ```

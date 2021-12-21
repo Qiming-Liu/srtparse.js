@@ -129,23 +129,21 @@ export default class srtParser {
     }
 
     static setPlayer(srtArray, setText) {
-        let bs = this.binarySearch
+        let t = this
         let player = new class {
             constructor() {
                 this.time = "00:00:00,000";
                 this.srtArray = srtArray;
                 this.setText = setText;
-                this.binarySearch = bs
-                // this.near = 5
             }
 
-            moveTo(time) {
+            update(time) {
                 //TDOD: optimize
-                //check first
+                //check self
                 //check near 5
                 //check all
                 this.time = time;
-                let text = this.binarySearch(this.srtArray, 0, this.srtArray.length - 1, time);
+                let text = t.binarySearch(this.srtArray, 0, this.srtArray.length - 1, time);
                 this.setText(text);
             }
 
@@ -153,7 +151,6 @@ export default class srtParser {
                 return this.srtArray[this.srtArray.length - 1].endTime;
             }
         }
-        player.moveTo(player.time)
         return player;
     }
 }
