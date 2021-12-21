@@ -1,5 +1,5 @@
 {
-  "name": "srtparse.js",
+  "name": "srtparsejs",
   "version": "0.0.3",
   "description": "A javascript .srt file parser and player",
   "main": "index.js",
