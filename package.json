@@ -1,0 +1,19 @@
+{
+  "name": "srtparse.js",
+  "version": "0.0.3",
+  "description": "A javascript .srt file parser and player",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qiming-Liu/srtparse.js.git"
+  },
+  "author": "Qiming-Liu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Qiming-Liu/srtparse.js/issues"
+  },
+  "homepage": "https://github.com/Qiming-Liu/srtparse.js#readme"
+}
