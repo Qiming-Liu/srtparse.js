@@ -2,7 +2,6 @@
 A javascript .srt file parser and player
 
 ## Install
-`npm`
 ```shell
 npm install srtparsejs
 ```
@@ -18,7 +17,15 @@ Hello
 `
 let parsed = srtparser.parse(srt)
 console.log(parsed)
-/*
+/* result:
+[
+  {
+    id: 1,
+    start: 11.544,
+    end: 12.682,
+    text: 'Hello'
+  }
+]
 [{
     id: '1',
     startTime: '00:00:11,544',
@@ -29,19 +36,23 @@ console.log(parsed)
 
 let srtString = srtparser.toSrt(parsed)
 console.log(srtString)
-/*
+/* result:
 1
 00:00:11,544 --> 00:00:12,682
 Hello
 `
 */
 
+// Display the text of each subtitle by time
 let srtPlayer = srtparser.setPlayer(parsed, text=>{
     console.log(text)
 })
-// This will display the text of each subtitle by time
 
-srtPlayer.update("00:00:11,544") // Move to this time
+// Move player to this time
+srtPlayer.update("00:00:11,544") 
+
+// Get subtitle end time
+console.log(srtPlayer.getEndTime())
 ```
 
 ## Usage
@@ -81,7 +92,7 @@ setInterval(() => {
     ms += interval
 
     //update to specific time
-    player.update(srtparser.toTime(ms));
+    player.update(srtparser.toTime(ms))
 
-}, interval);
+}, interval)
 ```
