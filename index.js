@@ -18,7 +18,7 @@ export default class srtParser {
 
     static fixDigit(how_many_digit, str, padEnd) {
         if (padEnd === void 0) { padEnd = true; }
-        if (str.length == how_many_digit) {
+        if (str.length === how_many_digit) {
             return str;
         }
         if (str.length > how_many_digit) {
@@ -53,7 +53,7 @@ export default class srtParser {
     static parse(srtFile) {
         let originalData = srtFile;
         let data_array = this.tryComma(originalData);
-        if (data_array.length == 0) {
+        if (data_array.length === 0) {
             data_array = this.tryDot(originalData);
         }
         let items = [];
@@ -113,14 +113,14 @@ export default class srtParser {
 
     static binarySearch(array, startindex, endindex, time) {
         if (startindex > endindex) {
-            return "";
+            return undefined;
         }
         let mid = Math.floor((startindex + endindex) / 2);
         let res = this.compareTime(time, array[mid].startTime, array[mid].endTime);
-        if (res == 0) {
-            return array[mid].text;
+        if (res === 0) {
+            return mid;
         }
-        else if (res == -1) {
+        else if (res === -1) {
             return this.binarySearch(array, startindex, mid - 1, time);
         }
         else {
@@ -132,19 +132,58 @@ export default class srtParser {
         let t = this
         let player = new class {
             constructor() {
+                this.id = -1;
                 this.time = "00:00:00,000";
                 this.srtArray = srtArray;
                 this.setText = setText;
+                setText("");
             }
 
             update(time) {
-                //TDOD: optimize
-                //check self
-                //check near 5
-                //check all
                 this.time = time;
-                let text = t.binarySearch(this.srtArray, 0, this.srtArray.length - 1, time);
-                this.setText(text);
+                //check 0
+                if (this.id === -1) {
+                    if (t.compareTime(this.time, this.srtArray[0].startTime, this.srtArray[0].endTime) === 0) {
+                        this.id = 0;
+                        this.setText(this.srtArray[0].text);
+                    }
+                    return;
+                }
+                //check self
+                let res = t.compareTime(this.time, this.srtArray[this.id].startTime, this.srtArray[this.id].endTime);
+                if (res === 0) {
+                    return;
+                } else {//if not self
+                    //check near 10
+                    let start;
+                    let end;
+                    if (res === -1) {
+                        end = Math.max(this.id - 1, 0);
+                        start = Math.max(end - 10, 0);
+                        if (this.id !== 0 && t.compareTime(this.time, this.srtArray[this.id - 1].endTime, this.srtArray[this.id].startTime) === 0) {
+                            this.setText("");
+                            return;
+                        }
+                    } else {
+                        start = Math.min(this.id + 1, this.srtArray.length - 1);
+                        end = Math.min(start + 10, this.srtArray.length - 1);
+                        if (this.id !== 0 && t.compareTime(this.time, this.srtArray[this.id].endTime, this.srtArray[this.id + 1].startTime) === 0) {
+                            this.setText("");
+                            return;
+                        }
+                    }
+                    let index = t.binarySearch(this.srtArray, start, end, this.time);
+                    if (index === undefined) {//if not found
+                        //check all
+                        index = t.binarySearch(this.srtArray, 0, this.srtArray.length - 1, this.time);
+                        if (index === undefined) {
+                            this.setText("");
+                            return;
+                        }
+                    }
+                    this.id = index;
+                    this.setText(this.srtArray[this.id].text);
+                }
             }
 
             getEndTime() {

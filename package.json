@@ -1,6 +1,6 @@
 {
   "name": "srtparsejs",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "description": "A javascript .srt file parser and player",
   "main": "index.js",
   "type": "module",
@@ -16,5 +16,5 @@
   "bugs": {
     "url": "https://github.com/Qiming-Liu/srtparse.js/issues"
   },
-  "homepage": "https://github.com/Qiming-Liu/srtparse.js#readme"
+  "homepage": "https://github.com/Qiming-Liu/srtparse.js"
 }
