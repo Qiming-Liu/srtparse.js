@@ -18,14 +18,6 @@ Hello
 let parsed = srtparser.parse(srt)
 console.log(parsed)
 /* result:
-[
-  {
-    id: 1,
-    start: 11.544,
-    end: 12.682,
-    text: 'Hello'
-  }
-]
 [{
     id: '1',
     startTime: '00:00:11,544',
@@ -86,13 +78,9 @@ let player = srtparser.setPlayer(srtArray, text => {
 
 //update srt player time
 setInterval(() => {
-    
     if (pause) return;
-
     ms += interval
-
     //update to specific time
     player.update(srtparser.toTime(ms))
-
 }, interval)
 ```
