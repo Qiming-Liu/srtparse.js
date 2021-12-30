@@ -1,3 +1,4 @@
+// https://github.com/Qiming-Liu/srtparse.js
 export default class srtParser {
     static correctFormat(time) {
         let str = time.replace(".", ",");
