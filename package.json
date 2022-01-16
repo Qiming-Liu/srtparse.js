@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Qiming-Liu/srtparse.js.git"
+    "url": "https://github.com/Qiming-Liu/srtparse.js.git"
   },
   "author": "Qiming-Liu",
   "license": "MIT",
