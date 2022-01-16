@@ -1,4 +1,4 @@
-name: Node.js Package
+name: NPM Package
 on: workflow_dispatch
 jobs:
   publish-npm:
@@ -7,8 +7,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 16.X
           registry-url: https://registry.npmjs.org/
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
