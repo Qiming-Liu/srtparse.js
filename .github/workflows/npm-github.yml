@@ -1,7 +1,7 @@
-name: NPM GITHUB Package
+name: NPM Github Package
 on: workflow_dispatch
 jobs:
-  publish-npm:
+  publish-github:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -9,6 +9,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com
+          scope: '@qiming-liu'
       - run: |
           yarn
           yarn prepublishOnly
