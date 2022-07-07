@@ -33,11 +33,7 @@
     "@babel/preset-env": "^7.18.6",
     "babel-jest": "^28.1.2",
     "jest": "^28.1.2",
-    "jest-puppeteer": "^6.1.1",
-    "puppeteer-core": "^15.3.1",
-    "ts-jest": "^28.0.5",
-    "tsup": "^6.1.3",
-    "typescript": "^4.7.4"
+    "tsup": "^6.1.3"
   },
   "scripts": {
     "build": "tsup src/index.js --format cjs,esm --clean",
