@@ -1,1 +1,4 @@
-.github
+/node_modules
+/.github
+/coverage
+yarn.lock

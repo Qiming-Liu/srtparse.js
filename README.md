@@ -8,8 +8,8 @@ npm install srtparsejs
 
 ## Example
 ```js
-import srtparser from 'srtparsejs'
-// const srtparser = require('srtparsejs');
+import srtparsejs from 'srtparsejs'
+// const srtparsejs = require('srtparsejs');
 
 
 let srt = `
@@ -17,7 +17,7 @@ let srt = `
 00:00:11,544 --> 00:00:12,682
 Hello
 `
-let parsed = srtparser.parse(srt)
+let parsed = srtparsejs.parse(srt)
 console.log(parsed)
 /* result:
 [{
@@ -28,7 +28,7 @@ console.log(parsed)
 }]
 */
 
-let srtString = srtparser.toSrt(parsed)
+let srtString = srtparsejs.toSrt(parsed)
 console.log(srtString)
 /* result:
 1
@@ -38,7 +38,7 @@ Hello
 */
 
 // Display the text of each subtitle by time
-let srtPlayer = srtparser.setPlayer(parsed, text=>{
+let srtPlayer = srtparsejs.setPlayer(parsed, text=>{
     console.log(text)
 })
 
@@ -49,9 +49,9 @@ srtPlayer.update("00:00:11,544")
 console.log(srtPlayer.getEndTime())
 ```
 
-## Usage
+## srtPlayer Usage
 ```js
-import srtparser from 'srtparsejs'
+import srtparsejs from 'srtparsejs'
 
 //srt content
 let srt = `
@@ -67,13 +67,13 @@ let pause = false
 let interval = 100
 
 //parse srt
-let srtArray = srtparser.parse(srt)
+let srtArray = srtparsejs.parse(srt)
 
 //start millisecond
 let ms = 0
 
 //create player
-let player = srtparser.setPlayer(srtArray, text => {
+let player = srtparsejs.setPlayer(srtArray, text => {
     //here to display the text
     console.log(text)
 })
@@ -83,6 +83,6 @@ setInterval(() => {
     if (pause) return;
     ms += interval
     //update to specific time
-    player.update(srtparser.toTime(ms))
+    player.update(srtparsejs.toTime(ms))
 }, interval)
 ```

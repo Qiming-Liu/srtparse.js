@@ -13,7 +13,7 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: |
-          npm
+          npm install
           npm install srtparsejs
           npm uninstall srtparsejs
           npm install srtparsejs
@@ -40,7 +40,7 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: |
-          npm
+          npm install
           npm install @qiming-liu/srtparsejs
           npm uninstall @qiming-liu/srtparsejs
           npm install @qiming-liu/srtparsejs
