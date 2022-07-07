@@ -31,35 +31,3 @@ jobs:
           npm uninstall srtparsejs
           npm install srtparsejs
           npm uninstall srtparsejs
-        
-  test-github:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: https://npm.pkg.github.com
-      - run: |
-          npm install
-          npm test
-          npm install @qiming-liu/srtparsejs
-          npm uninstall @qiming-liu/srtparsejs
-          npm install @qiming-liu/srtparsejs
-          npm uninstall @qiming-liu/srtparsejs
-          npm install @qiming-liu/srtparsejs
-          npm uninstall @qiming-liu/srtparsejs
-          npm install @qiming-liu/srtparsejs
-          npm uninstall @qiming-liu/srtparsejs
-          npm install @qiming-liu/srtparsejs
-          npm uninstall @qiming-liu/srtparsejs
-          npm install @qiming-liu/srtparsejs
-          npm uninstall @qiming-liu/srtparsejs
-          npm install @qiming-liu/srtparsejs
-          npm uninstall @qiming-liu/srtparsejs
-          npm install @qiming-liu/srtparsejs
-          npm uninstall @qiming-liu/srtparsejs
-          npm install @qiming-liu/srtparsejs
-          npm uninstall @qiming-liu/srtparsejs
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_TOKEN }}

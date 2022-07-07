@@ -13,7 +13,12 @@ jobs:
       - run: |
           yarn
           yarn prepublishOnly
-          sed -i 's/"name": "srtparsejs",/"name": "@qiming-liu/srtparsejs",/g' package.json
+      - name: replace scope
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "srtparsejs"
+          replace: "@qiming-liu/srtparsejs"
+          include: "package.json"
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_TOKEN }}
