@@ -1,13 +1,12 @@
 {
   "name": "srtparsejs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A javascript .srt file parser and player",
   "keywords": [
     "subtitle",
     "srt",
     "parse",
-    "parser",
-    "stringify"
+    "parser"
   ],
   "homepage": "https://github.com/Qiming-Liu/srtparse.js",
   "bugs": {

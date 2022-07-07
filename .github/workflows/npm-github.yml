@@ -13,6 +13,7 @@ jobs:
       - run: |
           yarn
           yarn prepublishOnly
+          sed -i 's/"name": "srtparsejs",/"name": "@qiming-liu/srtparsejs",/g' package.json
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_TOKEN }}
