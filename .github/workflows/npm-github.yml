@@ -1,4 +1,4 @@
-name: NPM Package
+name: NPM GITHUB Package
 on: workflow_dispatch
 jobs:
   publish-npm:
