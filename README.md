@@ -9,6 +9,8 @@ npm install srtparsejs
 ## Example
 ```js
 import srtparser from 'srtparsejs'
+// const srtparser = require('srtparsejs');
+
 
 let srt = `
 1

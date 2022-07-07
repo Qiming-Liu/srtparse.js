@@ -1,27 +1,39 @@
 {
   "name": "srtparsejs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A javascript .srt file parser and player",
-  "homepage": "https://github.com/Qiming-Liu/srtparse.js",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Qiming-Liu/srtparse.js.git"
-  },
-  "author": "Qiming-Liu",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Qiming-Liu/srtparse.js/issues"
-  },
   "keywords": [
     "subtitle",
     "srt",
     "parse",
     "parser",
     "stringify"
-  ]
+  ],
+  "homepage": "https://github.com/Qiming-Liu/srtparse.js",
+  "bugs": {
+    "url": "https://github.com/Qiming-Liu/srtparse.js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Qiming-Liu/srtparse.js.git"
+  },
+  "license": "MIT",
+  "author": "Qiming-Liu (https://github.com/Qiming-Liu)",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --clean",
+    "watch": "npm run build -- --watch src",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "tsup": "^6.1.3"
+  }
 }

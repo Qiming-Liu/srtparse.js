@@ -1,0 +1,61 @@
+name: NPM Package Install
+on:
+  push:
+  schedule:
+    - cron: '25 * * * *'
+jobs:
+  NPM:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - run: |
+          npm
+          npm install srtparsejs
+          npm uninstall srtparsejs
+          npm install srtparsejs
+          npm uninstall srtparsejs
+          npm install srtparsejs
+          npm uninstall srtparsejs
+          npm install srtparsejs
+          npm uninstall srtparsejs
+          npm install srtparsejs
+          npm uninstall srtparsejs
+          npm install srtparsejs
+          npm uninstall srtparsejs
+          npm install srtparsejs
+          npm uninstall srtparsejs
+          npm install srtparsejs
+          npm uninstall srtparsejs
+        
+  GITHUB:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - run: |
+          npm
+          npm install @qiming-liu/srtparsejs
+          npm uninstall @qiming-liu/srtparsejs
+          npm install @qiming-liu/srtparsejs
+          npm uninstall @qiming-liu/srtparsejs
+          npm install @qiming-liu/srtparsejs
+          npm uninstall @qiming-liu/srtparsejs
+          npm install @qiming-liu/srtparsejs
+          npm uninstall @qiming-liu/srtparsejs
+          npm install @qiming-liu/srtparsejs
+          npm uninstall @qiming-liu/srtparsejs
+          npm install @qiming-liu/srtparsejs
+          npm uninstall @qiming-liu/srtparsejs
+          npm install @qiming-liu/srtparsejs
+          npm uninstall @qiming-liu/srtparsejs
+          npm install @qiming-liu/srtparsejs
+          npm uninstall @qiming-liu/srtparsejs
+          npm install @qiming-liu/srtparsejs
+          npm uninstall @qiming-liu/srtparsejs
