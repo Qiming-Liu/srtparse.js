@@ -64,7 +64,11 @@ export function getSrtArrayIndex(srtArray, startindex, endindex, timeString) {
     return undefined;
   }
   let mid = Math.floor((startindex + endindex) / 2);
-  let res = compareTime(timeString, srtArray[mid].startTime, srtArray[mid].endTime);
+  let res = compareTime(
+    timeString,
+    srtArray[mid].startTime,
+    srtArray[mid].endTime
+  );
   if (res === 0) {
     return mid;
   } else if (res === -1) {

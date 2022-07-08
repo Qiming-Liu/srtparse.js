@@ -1,3 +1,5 @@
+import { getSrtArrayIndex } from "./index.js";
+
 export function setPlayer(srtArray, setText) {
   let t = this;
   let player = new (class {
@@ -67,11 +69,11 @@ export function setPlayer(srtArray, setText) {
             return;
           }
         }
-        let index = t.binarySearch(this.srtArray, start, end, this.time);
+        let index = getSrtArrayIndex(this.srtArray, start, end, this.time);
         if (index === undefined) {
           //if not found
           //check all
-          index = t.binarySearch(
+          index = getSrtArrayIndex(
             this.srtArray,
             0,
             this.srtArray.length - 1,
