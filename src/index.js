@@ -1,5 +1,5 @@
-import * as parser from './parser/parser.js';
-import * as player from './player/player.js';
+import * as parser from './parser.js';
+import * as player from './player.js';
 
 export function parse(srtFile) {
   let originalData = srtFile;
