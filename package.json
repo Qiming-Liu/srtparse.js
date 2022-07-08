@@ -39,6 +39,7 @@
     "watch": "npm run build -- --watch src",
     "test": "npm run build && node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
     "test:debug": "npm run build && jest --runInBand",
-    "prepublishOnly": "npm run test"
+    "prepublishOnly": "npm run test",
+    "in": "npm install srtparsejs && npm uninstall srtparsejs"
   }
 }

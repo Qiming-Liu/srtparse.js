@@ -2,7 +2,7 @@ name: NPM Package Install test
 on:
   push:
   schedule:
-    - cron: '25 * * * *'
+    - cron: "25 * * * *"
 jobs:
   test-npm:
     runs-on: ubuntu-latest
@@ -14,20 +14,86 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: |
           npm install
-          npm test
-          npm install srtparsejs
-          npm uninstall srtparsejs
-          npm install srtparsejs
-          npm uninstall srtparsejs
-          npm install srtparsejs
-          npm uninstall srtparsejs
-          npm install srtparsejs
-          npm uninstall srtparsejs
-          npm install srtparsejs
-          npm uninstall srtparsejs
-          npm install srtparsejs
-          npm uninstall srtparsejs
-          npm install srtparsejs
-          npm uninstall srtparsejs
-          npm install srtparsejs
-          npm uninstall srtparsejs
+          npm run test
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
+          npm run in
