@@ -1,4 +1,4 @@
-# srt-parse.js
+# [srt-parse.js](https://www.npmjs.com/package/srtparsejs)
 A javascript srt text parser and player.
 
 ## Install

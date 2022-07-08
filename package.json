@@ -1,7 +1,7 @@
 {
   "name": "srtparsejs",
-  "version": "1.0.4",
-  "description": "A javascript .srt file parser and player",
+  "version": "1.0.5",
+  "description": "A javascript srt text parser and player.",
   "keywords": [
     "subtitle",
     "srt",
