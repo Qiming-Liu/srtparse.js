@@ -6,7 +6,10 @@
     "subtitle",
     "srt",
     "parse",
-    "parser"
+    "srtparse",
+    "parser",
+    "player",
+    "srtplayer"
   ],
   "homepage": "https://github.com/Qiming-Liu/srtparse.js",
   "bugs": {
