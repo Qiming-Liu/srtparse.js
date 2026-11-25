@@ -1,6 +1,6 @@
 {
   "name": "srtparsejs",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "A javascript srt text parser and player.",
   "keywords": [
     "subtitle",
@@ -42,7 +42,6 @@
     "watch": "npm run build -- --watch src",
     "test": "npm run build && node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
     "test:debug": "npm run build && jest --runInBand",
-    "prepublishOnly": "npm run test",
-    "in": "npm install srtparsejs && npm uninstall srtparsejs"
+    "prepublishOnly": "npm run test"
   }
 }
